@@ -15,10 +15,11 @@ text = st.text_input("Enter a description of an image")
 if text:
     st.write("Generating image, it may take a minute or two ...")
 
-    subprocess.run(["python", "optimizedSD/optimized_txt2img.py", "--prompt", text, "--H", "512", "--W", "512",
-                    "--seed", "27", "--n_iter", "1", "--n_samples", "4"],
-                   check=True)
     folder = text.replace(" ", "_")
+    subprocess.run(["python", "scripts/txt2img.py", "--prompt", text, "--H", "512", "--W", "512",
+                    "--seed", "27", "--n_iter", "2", "--n_samples", "3", "--plms", "--skip_grid",
+                    "--outdir", f"outputs/txt2img-samples/samples/{folder}"],
+                   check=True)
     for filename in glob.glob(f'outputs/txt2img-samples/samples/{folder}/*.png'):
         st.image(Image.open(filename))
         st.write("Image generated!")
