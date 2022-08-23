@@ -140,19 +140,19 @@ def main():
     parser.add_argument(
         "--n_samples",
         type=int,
-        default=2,
+        default=4,
         help="how many samples to produce for each given prompt. A.k.a batch size",
     )
     parser.add_argument(
         "--n_rows",
         type=int,
-        default=0,
+        default=2,
         help="rows in the grid (default: n_samples)",
     )
     parser.add_argument(
         "--scale",
         type=float,
-        default=5.0,
+        default=7.5,
         help="unconditional guidance scale: eps = eps(x, empty) + scale * (eps(x, cond) - eps(x, empty))",
     )
 

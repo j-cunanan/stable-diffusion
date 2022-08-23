@@ -107,13 +107,13 @@ parser.add_argument(
 parser.add_argument(
     "--H",
     type=int,
-    default=None,
+    default=512,
     help="image height, in pixel space",
 )
 parser.add_argument(
     "--W",
     type=int,
-    default=None,
+    default=512,
     help="image width, in pixel space",
 )
 parser.add_argument(
@@ -137,7 +137,7 @@ parser.add_argument(
 parser.add_argument(
     "--n_samples",
     type=int,
-    default=5,
+    default=4,
     help="how many samples to produce for each given prompt. A.k.a. batch size",
 )
 parser.add_argument(
